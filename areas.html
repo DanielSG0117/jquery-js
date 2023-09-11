@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áreas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class="container-xxl">
+        <div class="row">
+            <!--HEADER-->
+            <div class="col-12" id="header">
+                <h1>PRÁCTICA 5</h1>
+                <h2>JavaScript y jQuery</h2>
+            </div>
+            <!--MENU HORIZONTAL-->
+            <div class="col-12 bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-xxl">
+                        <a class="navbar-brand" href="#">Menu</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a href="./index.html" class="nav-link active">Calculadora Básica</a>
+                                <a href="./perimetros.html" class="nav-link active">Perímetro</a>
+                                <a href="./areas.html" class="nav-link active">Área</a>
+                                <a href="./volumenes.html" class="nav-link active">Volumen</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Force next columns to break to new line -->
+            <div class="w-100"></div>
+            <!--MAIN-->
+            <div class="col-12 col-sm-9 main">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Área</h2>
+                        <br>
+                        <div id="divFormulario">
+                            <form id="frmSeleccionar">
+                                <div class="form-group row">
+                                    <div class="col-xl-12 text-center">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                id="rdRectangulo" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">Rectangulo</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                id="rdTriangulo" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">Triangulo</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                id="rdCirculo" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">Circulo</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <br>
+                            <div class="text-center">
+                                <input id="btnSeleccionar" type="button" class="btn btn-primary" value="Aceptar">
+                            </div>
+                        </div>
+                        <br>
+                        <div id="divCalculadora" class="col-xs-12 offset-xs-0 col-sm-10 col-md-8 offset-md-2 col-lg-6 offset-lg-3 
+                        col-xl-6 offset-xl-3 col-xxl-6 offset-xxl-3>">
+                            <div class="card d-none" id="divRectangulo">
+                                <div class="card-header">
+                                    <h5>Rectangulo</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text col-3 col-xl-2" id="">Base</span>
+                                        <input type="number" class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" id="txtBase">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text col-3 col-xl-2" id="">Altura</span>
+                                        <input type="number" class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" id="txtAltura">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text col-sm-4 col-xl-3" id="">Resultado</span>
+                                        <input class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" disabled="disabled"
+                                            id="resultadoRectangulo">
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="btn btn-primary" id="btnRectangulo">Calcular</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card d-none" id="divTriangulo">
+                                <div class="card-header">
+                                    <h5>Triangulo</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text  col-3 col-xl-2">Base</span>
+                                        <input type="number" class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" id="txtBaseTriangulo">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text  col-3 col-xl-2">Altura</span>
+                                        <input type="number" class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" id="txtAlturaTriangulo">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text col-sm-4 col-xl-3" id="">Resultado</span>
+                                        <input class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" disabled="disabled"
+                                            id="resultadoTriangulo">
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="btn btn-primary" id="btnTriangulo">Calcular</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card d-none" id="divCirculo">
+                                <div class="card-header">
+                                    <h5>Circulo</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text col-3 col-xl-2">Radio</span>
+                                        <input type="number" class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" id="txtRadio">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text col-sm-4 col-xl-3" id="">Resultado</span>
+                                        <input class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" disabled="disabled"
+                                            id="resultadoCirculo">
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="btn btn-primary" id="btnCirculo">Calcular</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <a class="btn btn-primary d-none" id="btnRegresar">Seleccionar Figura</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+
+            <!--SIDEBAR-->
+            <div class="col-12 col-sm-3 bg-light sidebar">
+                <div class="card">
+                    <img src="http://image.slidesharecdn.com/areadelasregionesplanas-131001011057-phpapp02/95/area-de-las-regiones-planas-7-638.jpg?cb=1380590031" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Área</h5>
+                        <p class="card-text">El área es un concepto métrico que puede permitir asignar una medida a la
+                            extensión de una superficie, expresada en matemáticas como unidades de medida denominadas
+                            unidades de superficie.​ El área es un concepto métrico que requiere la especificación de
+                            una medida de longitud..</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--FOOTER-->
+            <div class="col-12 footer">
+                <br>
+                <a href="#header" class="btn btn-secondary btn-lg" tabindex="-1" role="button"
+                    aria-disabled="true">Regresar al inicio</a>
+                <hr>
+                <p class="lead">
+                    © 2017–2021 INSTITUTO POLITÉCNICO NACIONAL
+                </p>
+                <p class="lead">
+                    Suarez Gonzalez Daniel
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">code</script>
+    <script type="text/javascript" src="./scripts/area.js"></script>
+</body>
+
+</html>

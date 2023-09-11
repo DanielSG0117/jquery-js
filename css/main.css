@@ -1,0 +1,63 @@
+#header{
+    background: #6c2343;
+    text-align: center; 
+    color: #DCD;
+}
+
+.menu_vertical{
+    background-color: #6c2343 !important; 
+    border: none !important;
+}
+
+.sidebar h3, h5{
+    text-align: center;
+}
+
+.sidebar p{
+    text-align: justify;
+}
+
+.main p{
+    text-align: justify;
+}
+
+.main h1,
+.main h2,
+.main h3, 
+.main h5{
+    text-align: center;
+}
+
+.main a{
+    text-decoration: solid;
+}
+
+.footer{
+    background-color: #333; 
+    text-align: center;
+}
+
+.footer p{
+    color: aliceblue;
+}
+
+.footer hr{
+    border: #DCD solid;
+}
+
+
+hr{
+    border: #6c2343 solid;
+}
+
+.hr_card{
+    border: 0px;
+}
+
+#txtDisplay {
+    text-align: right;
+}
+
+input {
+    text-align: right;
+}
